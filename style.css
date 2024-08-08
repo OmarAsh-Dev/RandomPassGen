@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient(135deg,#084164,#002339);
+    background: #084164;
     color: #fff;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -133,6 +133,8 @@ body::-webkit-scrollbar {
     }
 
     .display {
+        width: auto;
+        height: 75px;
         padding: 20px;
         flex-direction: column; /* Stack elements vertically */
         align-items: stretch;
