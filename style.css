@@ -1,27 +1,31 @@
-*{
+* {
     overflow: hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
     background: linear-gradient(135deg,#084164,#002339);
     color: #fff;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
 body::-webkit-scrollbar {
     display: none;
 }
-.container{
+
+.container {
     width: 90%;
     max-width: 700px;
     margin: 12%;
     overflow: hidden;
     padding: 0 20px;
 }
-.display{
+
+.display {
     width: 100%;
     margin-top: 50px;
     margin-bottom: 30px;
@@ -32,30 +36,39 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     padding: 26px 20px;
     border-radius: 5px;
+    flex-wrap: wrap; /* Ensures responsiveness */
 }
-.container h1{
+
+.container h1 {
     font-weight: 500;
     font-size: 45px;
 }
-.container h1 span{
+
+.container h1 span {
     color: #019f55;
     border-bottom: 4px solid #019f55;
     padding-bottom: 7px;
 }
-.display img{
+
+.display img {
     width: 30px;
     cursor: pointer;
 }
-.display input{
-   border: 0;
-   outline: 0;
-   font-size: 24px;
+
+.display input {
+    border: 0;
+    outline: 0;
+    font-size: 24px;
+    flex: 1; /* Allow input to take available space */
+    min-width: 0;
 }
-.container button img{
+
+.container button img {
     width: 28px;
     margin-right: 10px;
 }
-.container button{
+
+.container button {
     border: 0;
     outline: 0;
     background: #019f55;
@@ -68,8 +81,12 @@ body::-webkit-scrollbar {
     padding: 16px 26px;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%; /* Full width on mobile */
+    max-width: 280px;
+    margin-top: 20px;
 }
-#alert{
+
+#alert {
     background: #019f55;
     color: #fff;
     padding: 10px 20px;
@@ -83,10 +100,12 @@ body::-webkit-scrollbar {
     transition: opacity 0.5s ease-in-out; 
     pointer-events: none; 
 }
+
 #alert.show {
     opacity: 1; 
     pointer-events: auto; 
 }
+
 .closebtn {
     margin-left: 15px;
     color: white;
@@ -96,7 +115,39 @@ body::-webkit-scrollbar {
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
-  }
-    .closebtn:hover {
-        color: black;
-    }  
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        margin: 20% 5%; /* Adjust margins on smaller screens */
+        padding: 0 10px;
+    }
+
+    .container h1 {
+        font-size: 36px; /* Smaller font size on mobile */
+    }
+
+    .display {
+        padding: 20px;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: stretch;
+    }
+
+    .display input {
+        font-size: 20px; /* Adjust input font size */
+        margin-bottom: 10px; /* Space between input and image */
+    }
+
+    .display img {
+        align-self: flex-end; /* Align copy button to the end */
+    }
+
+    .container button {
+        font-size: 20px; /* Adjust button font size */
+    }
+}
